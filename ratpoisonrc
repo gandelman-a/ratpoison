@@ -1,0 +1,46 @@
+exec /usr/bin/rpws init 6 -k
+bind F9 exec rpws 1
+bind F10 exec rpws 2
+bind F11 exec rpws 3 
+bind F12 exec rpws 4
+bind C-F9 exec rpws 1
+bind C-F10 exec rpws 2
+bind C-F11 exec rpws 3 
+bind C-F12 exec rpws 4
+
+unmanage panel
+unmanage trayer
+set padding 0 0 0 26
+
+set fgcolor green
+set bgcolor black
+
+
+bind j focusdown
+bind l focusright
+bind k focusup
+bind h focusleft
+bind C-j exchangedown
+bind C-h exchangeleft
+bind C-k exchangeup
+bind C-l exchangeright
+bind c exec aterm -tr +sb -sh 45% -fg green
+bind grave exec firefox
+bind Escape kill
+bind d delete
+
+# show date/time/battery
+bind I exec ratpoison -c "echo $(date;  acpi)"
+
+# swap between external monitor and lcd, depending on whats connected
+bind F12 exec /home/adam/.ratpoison/bin/adjust_display.sh
+
+
+# split current frame, open terminal in new frame
+bind percent exec /home/adam/.ratpoison/bin/split_and_focus.sh horiz "aterm -tr +sb -sh 45% -fg green" 
+bind quotedbl exec /home/adam/.ratpoison/bin/split_and_focus.sh vert "aterm -tr +sb -sh 45% -fg green" 
+
+bind L exec gnome-screensaver-command --lock
+
+bind a exec /home/adam/.ratpoison/bin/rpshowall.sh 3
+

@@ -1,0 +1,23 @@
+sub set_workspaces {
+    my $number_of_workspaces = shift;
+    my $ws_names = shift;
+    my $ws_toggle_memory_trigger = shift;
+
+    $$number_of_workspaces = 4;
+
+    # user-customized workspace names:
+    #$$ws_names[0] = "notes";  # Group 0 can't be renamed due to bug
+    $$ws_names[1] = "firefox";
+    $$ws_names[2] = "email";
+    $$ws_names[3] = "admin";
+
+    # Does changing to this workspace set the toggle memory of the workspace you came from?
+    $$ws_toggle_memory_trigger[0] = "false";
+    $$ws_toggle_memory_trigger[1] = "true";
+    $$ws_toggle_memory_trigger[2] = "true";
+    $$ws_toggle_memory_trigger[3] = "true";
+}
+
+return 1;
+
+
