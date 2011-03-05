@@ -1,4 +1,5 @@
 exec /usr/bin/rpws init 6 -k
+exec /home/adam/.ratpoison/bin/launch_trayer.sh
 bind F9 exec rpws 1
 bind F10 exec rpws 2
 bind F11 exec rpws 3 
@@ -25,6 +26,7 @@ bind C-h exchangeleft
 bind C-k exchangeup
 bind C-l exchangeright
 bind c exec aterm -tr +sb -sh 45% -fg green
+bind C exec aterm -tr +sb -sh 45% -fg green -e tmux
 bind grave exec firefox
 bind Escape kill
 bind d delete
