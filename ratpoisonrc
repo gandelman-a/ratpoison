@@ -1,5 +1,5 @@
 exec /usr/bin/rpws init 6 -k
-exec /home/adam/.ratpoison/bin/launch_trayer.sh
+exec /home/adam/.ratpoison/bin/launch_trayer.sh start
 bind F9 exec rpws 1
 bind F10 exec rpws 2
 bind F11 exec rpws 3 
