@@ -48,3 +48,5 @@ bind L exec gnome-screensaver-command --lock
 
 bind a exec /home/adam/.ratpoison/bin/rpshowall.sh 3
 
+bind BackSpace exec ratpoison -c "fdump" >/tmp/fdump
+bind S-BackSpace exec ratpoison -c "frestore $(cat /tmp/fdump)"
