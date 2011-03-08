@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APPLETS="wicd-client
+APPLETS="nm-applet 
   gnome-power-manager 
   gnome-volume-control-applet" 
 
@@ -23,7 +23,7 @@ function launch_applets() {
 	echo "Launching applet: $i"
 	$i &
  done
- osd_clock -s 9
+ osd_clock -s 9 &
 }
 
 if [[ $1 == "start" ]] ; then
