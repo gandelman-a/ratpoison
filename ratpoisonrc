@@ -1,5 +1,6 @@
 exec /usr/bin/rpws init 6 -k
-exec /home/adam/.ratpoison/bin/launch_trayer.sh
+exec /home/adam/.ratpoison/bin/launch_trayer.sh start
+exec fbsetbg /home/adam/.ratpoison/bg-work.jpg
 bind F9 exec rpws 1
 bind F10 exec rpws 2
 bind F11 exec rpws 3 
@@ -27,6 +28,7 @@ bind C-k exchangeup
 bind C-l exchangeright
 bind c exec aterm -tr +sb -sh 45% -fg green
 bind C exec aterm -tr +sb -sh 45% -fg green -e tmux
+bind X exec xterm -fg green -bg black
 bind grave exec firefox
 bind Escape kill
 bind d delete
