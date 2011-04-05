@@ -1,4 +1,5 @@
 exec /usr/bin/rpws init 6 -k
+exec killall trayer
 exec /home/adam/.ratpoison/bin/launch_trayer.sh start
 exec fbsetbg /home/adam/.ratpoison/bg-work.jpg
 bind F9 exec rpws 1
@@ -18,6 +19,7 @@ set fgcolor green
 set bgcolor black
 
 
+unbind C-c
 bind j focusdown
 bind l focusright
 bind k focusup
@@ -26,9 +28,11 @@ bind C-j exchangedown
 bind C-h exchangeleft
 bind C-k exchangeup
 bind C-l exchangeright
-bind c exec aterm -tr +sb -sh 45% -fg green
-bind C exec aterm -tr +sb -sh 45% -fg green -e tmux
-bind X exec xterm -fg green -bg black
+#bind c exec aterm -tr +sb -sh 45% -fg green
+#bind C exec aterm -tr +sb -sh 45% -fg green -e tmux
+bind c exec xterm -fg green -bg black -b 2
+bind C exec xterm -fg green -bg black -b 2
+bind X exec xterm -fg green -bg black -b 2
 bind grave exec firefox
 bind Escape kill
 bind d delete
@@ -38,6 +42,8 @@ bind I exec ratpoison -c "echo $(date;  acpi)"
 
 # swap between external monitor and lcd, depending on whats connected
 bind F12 exec /home/adam/.ratpoison/bin/adjust_display.sh
+bind F11 exec /home/adam/.ratpoison/bin/adjust_display.sh home
+
 
 
 # split current frame, open terminal in new frame
