@@ -28,14 +28,13 @@ bind C-j exchangedown
 bind C-h exchangeleft
 bind C-k exchangeup
 bind C-l exchangeright
-#bind c exec aterm -tr +sb -sh 45% -fg green
-#bind C exec aterm -tr +sb -sh 45% -fg green -e tmux
-bind c exec xterm -fg green -bg black -b 2
-bind C exec xterm -fg green -bg black -b 2
-bind X exec xterm -fg green -bg black -b 2
+bind c exec xterm -fg green -bg black -w 2
+bind C exec xterm -fg green -bg black -w 2
+bind X exec xterm -fg green -bg black -w 2
 bind grave exec firefox
 bind Escape kill
 bind d delete
+bind v ratclick 2
 
 # show date/time/battery
 bind I exec ratpoison -c "echo $(date;  acpi)"
@@ -47,9 +46,8 @@ bind F11 exec /home/adam/.ratpoison/bin/adjust_display.sh home
 
 
 # split current frame, open terminal in new frame
-bind percent exec /home/adam/.ratpoison/bin/split_and_focus.sh horiz "aterm -tr +sb -sh 45% -fg green" 
-bind quotedbl exec /home/adam/.ratpoison/bin/split_and_focus.sh vert "aterm -tr +sb -sh 45% -fg green" 
-
+bind percent exec /home/adam/.ratpoison/bin/split_and_focus.sh horiz "xterm -fg green -bg black -w 4" 
+bind quotedbl exec /home/adam/.ratpoison/bin/split_and_focus.sh vert "xterm -fg green -bg black -w 4" 
 bind L exec gnome-screensaver-command --lock
 
 bind a exec /home/adam/.ratpoison/bin/rpshowall.sh 3
