@@ -1,4 +1,4 @@
-exec /usr/bin/rpws init 6 -k
+exec /usr/bin/rpws init 6 -nk
 exec killall trayer
 exec /home/adam/.ratpoison/bin/launch_trayer.sh start
 exec fbsetbg /home/adam/.ratpoison/bg-work.jpg
@@ -28,11 +28,12 @@ bind C-j exchangedown
 bind C-h exchangeleft
 bind C-k exchangeup
 bind C-l exchangeright
+bind T exec thunderbird
+bind g exec gnome-terminal
 bind c exec xterm -fg green -bg black -w 2
 bind C exec xterm -fg green -bg black -w 2
 bind X exec xterm -fg green -bg black -w 2
 bind grave exec firefox
-bind Escape kill
 bind d delete
 bind v ratclick 2
 
@@ -46,11 +47,13 @@ bind F11 exec /home/adam/.ratpoison/bin/adjust_display.sh home
 
 
 # split current frame, open terminal in new frame
-bind percent exec /home/adam/.ratpoison/bin/split_and_focus.sh horiz "xterm -fg green -bg black -w 4" 
-bind quotedbl exec /home/adam/.ratpoison/bin/split_and_focus.sh vert "xterm -fg green -bg black -w 4" 
+bind percent exec /home/adam/.ratpoison/bin/split_and_focus.sh horiz "xterm -fg green -bg black -w 4"
+bind quotedbl exec /home/adam/.ratpoison/bin/split_and_focus.sh vert "xterm -fg green -bg black -w 4"
 bind L exec gnome-screensaver-command --lock
-
+bind t exec /usr/bin/thunderbird
 bind a exec /home/adam/.ratpoison/bin/rpshowall.sh 3
-
-bind BackSpace exec ratpoison -c "fdump" >/tmp/fdump
-bind S-BackSpace exec ratpoison -c "frestore $(cat /tmp/fdump)"
+bind A exec /home/adam/.ratpoison/bin/rpshowall.sh 0 
+#bind BackSpace exec ratpoison -c "fdump" >/tmp/fdump
+#bind S-BackSpace exec ratpoison -c "frestore $(cat /tmp/fdump)"
+bind BackSpace exec /home/adam/.ratpoison/bin/dump_or_restore.sh
+bind S-BackSpace exec rm -rf /tmp/fdump 

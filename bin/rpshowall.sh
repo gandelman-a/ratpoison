@@ -23,13 +23,12 @@ fi
 
 # Parse input argument
 
-if [ $*>0 ]; then
-        wait="$*"
-else
-        wait=-1
-fi
-
-
+#if [ $*>0 ]; then
+#        wait="$*"
+#else
+#        wait=-1
+#fi
+wait=0
 # Save current frameset
 
 framecount=`$RATPOISON -c windows | wc -l | sed -e "s/[ ]*//g"`
@@ -58,6 +57,7 @@ done
 # 3- restore frameset after $wait seconds of delay
 
 $RATPOISON -c "select $curframe"
+
 if [ $wait -eq 0 ]; then
         $RATPOISON -i -c fselect
         $RATPOISON -c only
