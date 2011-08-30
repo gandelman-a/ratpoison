@@ -19,6 +19,8 @@ set fgcolor green
 set bgcolor black
 
 
+bind bracketleft nextscreen
+bind bracketright prevscreen
 unbind C-c
 bind j focusdown
 bind l focusright
