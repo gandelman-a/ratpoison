@@ -31,7 +31,7 @@ bind C-h exchangeleft
 bind C-k exchangeup
 bind C-l exchangeright
 bind T exec thunderbird
-bind g exec gnome-terminal
+bind g exec ~/.ratpoison/bin/gnome_term.sh
 bind c exec xterm -fg green -bg black -w 2
 bind C exec xterm -fg green -bg black -w 2
 bind X exec xterm -fg green -bg black -w 2
@@ -49,8 +49,8 @@ bind F11 exec /home/adam/.ratpoison/bin/adjust_display.sh home
 
 
 # split current frame, open terminal in new frame
-bind percent exec /home/adam/.ratpoison/bin/split_and_focus.sh horiz "gnome-terminal"
-bind quotedbl exec /home/adam/.ratpoison/bin/split_and_focus.sh vert "gnome-terminal"
+bind percent exec /home/adam/.ratpoison/bin/split_and_focus.sh horiz "~/.ratpoison/bin/gnome_term.sh"
+bind quotedbl exec /home/adam/.ratpoison/bin/split_and_focus.sh vert "~/.ratpoison/bin/gnome_term.sh"
 bind L exec gnome-screensaver-command --lock
 bind t exec /usr/bin/thunderbird
 bind a exec /home/adam/.ratpoison/bin/rpshowall.sh 3
